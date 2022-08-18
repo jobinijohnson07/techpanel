@@ -1,21 +1,31 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_URL}/allInterviews`)
+      .then((res) => res.json())
+      .then((result) => {
+        setPosts(result);
+      });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ul>
+          {posts.map((post) => (
+            <li>{post.status}</li>
+          ))}
+        </ul>         
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
         </a>
       </header>
     </div>

@@ -1,0 +1,116 @@
+.filter-section{
+    background-color: #f0f2f4;
+    .d-flex{
+        display: flex;
+    }
+    .topsection-content{
+        justify-content: space-between;
+        padding: 30px 15px 25px 15px;
+    }
+    .dropdown{
+        height: 40px;
+        padding: 10px;
+        border: solid 1px #d6dade;
+        background-color: #fff;
+    }
+    .dropdown-content{
+        width: 32px;
+        height: 16px;
+        margin: 0 266.4px 0 0;
+        font-family: Roboto;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: normal;
+        text-align: left;
+        color: #3e4a64;
+    }
+    .form-select-sm{
+        width: 335px;
+        height: 40px;
+        padding: 10px;
+        border: solid 1px #d6dade;
+        outline: unset !important;
+        background-color: #fff;
+    }
+    .tab{
+        display: flex;
+        height: 46px;
+        padding: 5px 5px 0px 5px;
+        border-radius: 4px;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        background-color: #fff;
+    }
+    .nav-tabs{
+        border-bottom: none;
+    }
+    .nav-tabs .nav-link{
+        padding: unset !important;
+        border:  unset !important;
+    }
+    .interviewtab-content{
+        width: 148.9px;
+        height: 35.5px;
+        margin: 0 39.1px 0 0;
+        padding: 10px 29.9px 9.5px 30px;
+        border-radius: 4px;
+        background-color: #395898;
+    }
+    .positions-content{
+        font-family: ProximaNova;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2.25;
+        letter-spacing: normal;
+        text-align: center;
+        width: 148.9px;
+        height: 35.5px;
+        cursor: pointer;
+        color: #395898;    
+    }
+    .interviewers-content{
+        font-family: ProximaNova;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.19;
+        letter-spacing: normal;
+        text-align: center;
+        color: #fff;
+        width: 148.9px;
+        height: 35.5px;
+        padding: 10px 29.9px 9.5px 30px;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: #395898;
+    }
+    .search-content{
+        width: 36px;
+        height: 36px;
+        margin: 0px 14px 0px 0px;
+        object-fit: contain;
+    }
+    .graph-content{
+        width: 36px;
+        height: 36px;
+        object-fit: contain;
+    }
+    .color-content{
+        width: 18px;
+        height: 18px;
+        margin: 2px 8px 2px 0;
+        background-color: #36c57b;
+    }
+    .form-select-sms{
+        width: 168px;
+        height: 40px;
+        padding: 8px;
+        border: solid 1px #d6dade;
+        outline: unset !important;
+        background-color: #fff;
+    }
+}

@@ -1,0 +1,484 @@
+{
+    "allLanguages" : [
+        {
+            "id": 1,
+            "language": "All"
+        },
+        {
+            "id": 2,
+            "language": "Java"
+        },
+        {
+            "id": 3,
+            "language": "Python"
+        },
+        {
+            "id": 4,
+            "language": "AWS"
+        },
+        {
+            "id": 5,
+            "language": "Azure"
+        },
+        {
+            "id": 6,
+            "language": "React.js"
+        },
+        {
+            "id": 7,
+            "language": "Angular"
+        },
+        {
+            "id": 8,
+            "language": "Vue.js"
+        },
+        {
+            "id": 9,
+            "language": "Gatsby.js"
+        },
+        {
+            "id": 10,
+            "language": "Next.js"
+        }
+    ],
+    "allInterviews" : [
+        {
+            "id": "1",
+            "status": "Recommended",
+            "name": "Adolf Anna",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [
+              "Google",
+              "Tata"
+            ],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "2",
+            "status": "Recommended",
+            "name": "Adolf Anna",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [
+              "Google",
+              "Tata",
+              "Tata",
+              "Google",
+              "Tata"
+            ],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "3",
+            "status": "Applied",
+            "name": "Adolf Anna",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [
+              "Google",
+              "Tata"
+            ],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "4",
+            "status": "Applied",
+            "name": "Tögöldör Josep",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "5",
+            "status": "Applied",
+            "name": "Camryn Lilou",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "6",
+            "status": "Empanelled",
+            "name": "Adolf Anna",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [
+              "Google",
+              "Tata"
+            ],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "7",
+            "status": "Empanelled",
+            "name": "Saveliy Athanasia",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "8",
+            "status": "Rejected",
+            "name": "Roz Miray",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [
+              "Google",
+              "Tata"
+            ],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "9",
+            "status": "On Hold",
+            "name": "Vincent Paddy",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          },
+          {
+            "id": "10",
+            "status": "On Hold",
+            "name": "Francine Carter",
+            "position": "Senior Manager",
+            "company": "Google",
+            "place": "Coimbatore",
+            "panel": [],
+            "skills": [
+              {
+                "id": "1",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "2",
+                "language": "HTML",
+                "percentage": "50"
+              },
+              {
+                "id": "3",
+                "language": "Javascript",
+                "percentage": "50"
+              },
+              {
+                "id": "4",
+                "language": "Python",
+                "percentage": "100"
+              }
+            ],
+            "billingRate": "300 per hr",
+            "availabilty": "2",
+            "rating": "4+",
+            "location": [
+              "Chennai"
+            ],
+            "currency": [
+              "dollar",
+              "Ruppee"
+            ],
+            "wishlist": "false"
+          }
+    ]
+}
