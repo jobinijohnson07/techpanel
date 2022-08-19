@@ -85,7 +85,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["false"]
           },
           {
             "id": "2",
@@ -133,7 +133,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["false"]
           },
           {
             "id": "3",
@@ -178,7 +178,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["false"]
           },
           {
             "id": "4",
@@ -220,7 +220,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["true"]
           },
           {
             "id": "5",
@@ -262,7 +262,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["true"]
           },
           {
             "id": "6",
@@ -307,7 +307,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["false"]
           },
           {
             "id": "7",
@@ -349,7 +349,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["true"]
           },
           {
             "id": "8",
@@ -394,7 +394,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["false"]
           },
           {
             "id": "9",
@@ -436,7 +436,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["false"]
           },
           {
             "id": "10",
@@ -478,7 +478,7 @@
               "dollar",
               "Ruppee"
             ],
-            "wishlist": "false"
+            "wishlist": ["false"]
           }
     ]
 }
