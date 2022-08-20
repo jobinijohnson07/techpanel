@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './column.scss';
-import Card from '../card/card';
+import {DraggableCard} from '../card/card';
 import Filter from '../../../Assets/filter.svg';
 import Sort from '../../../Assets/sort.svg';
 import Recommended from '../../../Assets/recommended.svg';
@@ -67,7 +67,7 @@ function Column({data}) {
             </div>
             
             <div >
-                <Card data={data}/>
+                <DraggableCard data={data}/>
             </div>
           </div>                
         </div>
