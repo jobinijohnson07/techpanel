@@ -51,8 +51,8 @@ function Interviewers() {
     console.log(cardId, destColumnId,index);
     var tempCol = {};
     tempCol = interviewersColumn.map((column) => ({
-      // return {
         ...column,
+        // cardList: [...column.cardList.slice(0, index), cardId, ...column.cardList.slice(index)]
         cardList: _.flowRight(
           () =>
             column.id === destColumnId
@@ -60,7 +60,6 @@ function Interviewers() {
                 : column.cardList,
           () => column.cardList.filter((id) => id !== cardId)
         )(column.cardList)
-      // }
     }))
     console.log(tempCol);
     setInterviewersColumn(tempCol);
