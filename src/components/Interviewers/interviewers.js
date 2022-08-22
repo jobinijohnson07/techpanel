@@ -54,11 +54,11 @@ function Interviewers() {
         ...column,
         // cardList: [...column.cardList.slice(0, index), cardId, ...column.cardList.slice(index)]
         cardList: _.flowRight(
-          () =>
+          (id) =>
             column.id === destColumnId
-                ? [...column.cardList.slice(0, index), cardId, ...column.cardList.slice(index)]
-                : column.cardList,
-          () => column.cardList.filter((id) => id !== cardId)
+                ? [...id.slice(0, index), cardId, ...id.slice(index)]
+                : id,
+          (id) => id.filter((id) => id !== cardId)
         )(column.cardList)
     }))
     console.log(tempCol);
