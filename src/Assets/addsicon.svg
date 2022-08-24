@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="108" height="108" viewBox="0 0 108 108">
+  <defs>
+    <filter id="Rectangle_2344" x="0" y="0" width="108" height="108" filterUnits="userSpaceOnUse">
+      <feOffset dy="20" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#262d3a" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_61385" data-name="Group 61385" transform="translate(-1628 -29)">
+    <g transform="matrix(1, 0, 0, 1, 1628, 29)" filter="url(#Rectangle_2344)">
+      <rect id="Rectangle_2344-2" data-name="Rectangle 2344" width="48" height="48" rx="24" transform="translate(30 10)" fill="#395898" opacity="0.1"/>
+    </g>
+    <g id="tag_close" transform="translate(1682 53.101) rotate(45)">
+      <path id="close_1_" data-name="close (1)" d="M8.283,7.136l5.451-5.451A.907.907,0,1,0,12.451.4L7,5.853,1.549.4A.907.907,0,0,0,.266,1.684L5.717,7.136.266,12.587A.907.907,0,1,0,1.549,13.87L7,8.418l5.451,5.451a.907.907,0,1,0,1.283-1.283Zm0,0" transform="translate(0 -0.136)" fill="#395898"/>
+    </g>
+  </g>
+</svg>

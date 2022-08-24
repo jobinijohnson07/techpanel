@@ -2,8 +2,11 @@ import { useState } from 'react';
 import './card.scss'
 import Google from '../../../Assets/google.png';
 import Tata from '../../../Assets/tata.png';
-import Orange from '../../../Assets/orange.svg';
-import Green from '../../../Assets/green.svg';
+import Beginner from '../../../Assets/orange.svg';
+import NoKnowledge from '../../../Assets/noknowledge.svg';
+import Basic from '../../../Assets/basic.svg';
+import Intermediate from '../../../Assets/intermediate.svg';
+import Advanced from '../../../Assets/green.svg';
 import Wishlist from '../../../Assets/wishlist.svg';
 import WishlistOpen from '../../../Assets/wishlistopen.svg';
 import Recommended from '../../../Assets/recommended.svg';
@@ -15,7 +18,9 @@ import cn from "classnames";
 export function Card(props) {
   const [card, setCard] = useState(props.data);
   const [isRecommendedOpen, setRecommendedOpen] = useState(false);
-
+  const [wishlist, setWishlist] = useState(true);
+  const [wishlistOpen, setWishlistOpen] = useState(false)
+ 
   const handleIsRecommendedIcon = () => {
     setRecommendedOpen(true);
   }
@@ -23,6 +28,42 @@ export function Card(props) {
   const handleIsRecommendedOpen = () => {
     setRecommendedOpen(false);
   }
+
+  const onToggle = () => {
+    setWishlistOpen(true);
+    setWishlist(false)
+  }
+
+  const handleWishlist = () => {
+    setWishlist(true)
+    setWishlistOpen(false);
+  }
+  const getSkill = (skills) => {
+    let code = '';
+    if (Number(skills.percentage) === 0){
+      code = <span ><img src={NoKnowledge} alt='orange'/>{skills.language}</span>
+    }
+    if (Number(skills.percentage) > 0 && Number(skills.percentage) <= 25){
+      code = <span ><img src={Basic} alt='orange'/>{skills.language}</span>
+    }
+    if(Number(skills.percentage) > 25 && Number(skills.percentage) <= 50){
+      code = <span ><img src={Beginner} alt='orange'/>{skills.language}</span>
+    }
+    if (Number(skills.percentage) > 50 && Number(skills.percentage) <= 75){
+      code = <span ><img src={Intermediate} alt='orange'/>{skills.language}</span>
+    }
+    if (Number(skills.percentage) > 75 && Number(skills.percentage) <= 100){
+      code = <span ><img src={Advanced} alt='orange'/>{skills.language}</span>
+    }
+    return code;
+  }
+  // function onToggle(event, param) {
+  //   console.log(props.data.wishlist)
+  //   let wish = param === props.data.wishlist ? true : false;
+  //   console.log(param, "param")
+  //   console.log(wish);
+  //   setWishlist(wish);
+  // }
 
     return _.flowRight(
       props.connectDragSource,
@@ -34,84 +75,93 @@ export function Card(props) {
           "Card--spacer": props.isSpacer
         })}
       >
-        {/* <div className="Card__title flex-wrap">{props.data ? props.data.name : null}</div> */}
-        <div className="card-section">
-         {/* {card.cardList.map((item,key)=>{
-          return( */}
-            <>
-              <div className="card-content">
-                <button data-bs-toggle="collapse" className='expand-button' data-bs-target={`#collapse${props.data ? props.data.id.toString() : null}`}> <img src={Arrow} alt="Arrow"/> </button>
-                <div className="d-flex">
-                  <div className="name-content">{props.data ? props.data.name : null}</div>
-                  <div className="d-flex whole-content">
-                    <div className="wishlist-content">
-                     {props.data ? props.data.wishlist.map((wishlist) => (
-                        <div className='col-5 p-0 m-0'>
-                            <span >{wishlist === 'false' ? <img src={Wishlist} alt='wishlist'/> : <img src={WishlistOpen} alt='wishlistOpen'/> }</span>
-                        </div>
-                      )):null}
+      <div className="card-section">
+        <>
+          <div className="card-content">
+            <button data-bs-toggle="collapse" className='expand-button' data-bs-target={`#collapse${props.data ? props.data.id.toString() : null}`}> <img src={Arrow} alt="Arrow"/> </button>
+            <div className="d-flex">
+              <div className="name-content">{props.data ? props.data.name : null}</div>
+              <div className="d-flex whole-content">
+                {wishlist &&
+                 <div className="wishlist-content" onClick={event => onToggle(event, props.data)}>
+                  {/* {props.data ? 
+                    <div className='col-5 p-0 m-0'>
+                        <span >{props.data.wishlist  === false ? <img src={Wishlist} alt='wishlist'/> : <img src={WishlistOpen} alt='wishlistOpen'/> }</span>
                     </div>
-                    <div className="recommendedimg-content" onClick={handleIsRecommendedIcon}><img src={Recommended} alt="Recommended" /></div>
-                      {isRecommendedOpen &&
-                        <div className="recommendedwhole-content" onClick={handleIsRecommendedOpen}>Remove Recommendation</div>
-                      }
+                   :null
+                  } */}
+                  <img src={Wishlist} alt='wishlist'/> 
+                </div>
+                }
+                {wishlistOpen &&
+                  <div className="wishlist-content" onClick={handleWishlist}><img src={WishlistOpen} alt='wishlistOpen'/></div>
+                }
+                <div className="recommendedimg-content" onClick={handleIsRecommendedIcon}><img src={Recommended} alt="Recommended" /></div>
+                  {isRecommendedOpen &&
+                    <div className="recommendedwhole-content" onClick={handleIsRecommendedOpen}>Remove Recommendation</div>
+                  }
+              </div>
+            </div>
+            <div className="position-content">{props.data ? props.data.position : null} - {props.data ? props.data.company : null} ({props.data ? props.data.place : null})</div>  
+            {props.data && props.data.panel.length ? 
+              <div className="panel-content">Panel on 
+                {props.data.panel.map((imgSrc,id) => {
+                  return(                        
+                    <>
+                      {imgSrc === 'Google' ? <img src={Google} key={id} alt="google" /> : null } 
+                      {imgSrc === 'Tata' ? <img src={Tata} key={id} alt="tata" /> : null } 
+                    </>
+                  )
+                })}
+              </div>
+              :null
+            } 
+            <div className="row">
+                {props.data ? props.data.skills.map((skills) => (
+                    <div className='col-5 p-0 m-0 language-wrapper'>
+                      {getSkill(skills)}
+                        {/* <span >{skills.percentage === '0' ? <img src={NoKnowledge} alt='orange'/> : null }{skills.language}</span>
+                        <span >{skills.percentage <= '25' ? <img src={Basic} alt='orange'/> : null }{skills.language}</span>
+                        <span >{skills.percentage <= '50' ? <img src={Beginner} alt='orange'/> : null }{skills.language}</span>
+                        <span >{skills.percentage <= '75' ? <img src={Intermediate} alt='orange'/> : null }{skills.language}</span>
+                        <span >{skills.percentage <= '100' ? <img src={Advanced} alt='orange'/> : null }{skills.language}</span> */}
+                    </div>
+                )):null}
+            </div>  
+            <div className='details-section' class="collapse" id={`collapse${props.data ? props.data.id.toString() : null}`}>
+              <div className="p-0">
+                <div className="detail-wrapper">
+                  <div className="row p-0 m-0">
+                    <div className="col-4 p-0 m-0">
+                      <div className="heading-content">Billing Rate</div>
+                      <div className="values-content">${props.data ? props.data.billingRate : null}</div>
+                    </div>
+                    <div className="col-4 p-0 m-0">
+                      <div className="heading-content">Availability</div>
+                      <div className='values-content'>{props.data ? props.data.availabilty : null} slots/day</div>
+                    </div>
+                    <div className="col-4 p-0 m-0">
+                      <div className="heading-content">Rating</div>
+                      <div className="values-content">{props.data ? props.data.rating : null}</div>
+                    </div>
+                    <div className="col-12 p-0 m-0">
+                      <div className="preference-content">Location Preference</div>
+                      <div className="location-content">{props.data ? props.data.location : null}</div>
+                    </div>
                   </div>
                 </div>
-                <div className="position-content">{props.data ? props.data.position : null} - {props.data ? props.data.company : null} ({props.data ? props.data.place : null})</div>  
-                <div className="panel-content">Panel on                
-                  {props.data ? props.data.panel.map((imgSrc,id) => {
-                    return(                        
-                      <>
-                        {imgSrc === 'Google' ? <img src={Google} key={id} alt="google" /> : null } 
-                        {imgSrc === 'Tata' ? <img src={Tata} key={id} alt="tata" /> : null } 
-                      </>
-                    )
-                  }): null}
-                </div> 
-                <div className="row">
-                    {props.data ? props.data.skills.map((skills) => (
-                        <div className='col-5 p-0 m-0 language-wrapper'>
-                            <span >{skills.percentage === '50' ? <img src={Orange} alt='orange'/> : <img src={Green} alt='green'/> }{skills.language}</span>
-                        </div>
-                    )):null}
-                </div>  
-                <div className='details-section' class="collapse" id={`collapse${props.data ? props.data.id.toString() : null}`}>
-                  <div className="p-0">
-                    <div className="detail-wrapper">
-                      <div className="row p-0 m-0">
-                        <div className="col-4 p-0 m-0">
-                          <div className="heading-content">Billing Rate</div>
-                          <div className="values-content">${props.data ? props.data.billingRate : null}</div>
-                        </div>
-                        <div className="col-4 p-0 m-0">
-                          <div className="heading-content">Availability</div>
-                          <div className='values-content'>{props.data ? props.data.availabilty : null} slots/day</div>
-                        </div>
-                        <div className="col-4 p-0 m-0">
-                          <div className="heading-content">Rating</div>
-                          <div className="values-content">{props.data ? props.data.rating : null}</div>
-                        </div>
-                        <div className="col-12 p-0 m-0">
-                          <div className="preference-content">Location Preference</div>
-                          <div className="location-content">{props.data ? props.data.location : null}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>   
               </div>
-            </>
-          {/* )
-         })} */}
-        </div>
-        {/* <div className="Card__title flex-wrap">name</div> */}
+            </div>   
+          </div>
+        </>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export const DraggableCard = _.flowRight([
-    DropTarget(
-      "Card",
+export const DraggableCard = _.flowRight([
+  DropTarget(
+    "Card",
       {
         hover(props, monitor) {
           const { columnId, columnIndex } = props;
@@ -142,104 +192,4 @@ export function Card(props) {
         isDragging: monitor.isDragging()
       })
     )
-  ])(Card);
-
-// function Card(props){
-//     console.log("props", props)
-//     const [card, setCard] = useState(props.data);
-//     const [isWishIcon, setWishIcon] = useState(true)
-//     const [isWishlistIcon, setWishlistIcon] = useState(false)
-//     const [isRecommendedOpen, setRecommendedOpen] = useState(false);
-//     const handleIswishIcon = ()=> {
-//         setWishIcon(false);
-//         setWishlistIcon(true);
-//      }
-  
-//      const handleIsWishlistIcon = ()=> {
-//         setWishIcon(true);
-//         setWishlistIcon(false);
-//      } 
-
-//      const handleIsRecommendedIcon = () => {
-//         setRecommendedOpen(true);
-//      }
-
-//      const handleIsRecommendedOpen = () => {
-//         setRecommendedOpen(false);
-//      }
-
-//     return(
-//       <div className="card-section">       
-//         {card.cardList.map((item,key)=>{
-//           return(
-//            <>
-//             <div className="card-content" key={key}>
-//                 <button data-bs-toggle="collapse" className='expand-button' data-bs-target={`#collapse${item.id.toString()}`}> <img src={Arrow} alt="Arrow"/> </button>
-//               {/* <div className="d-flex"> */}
-//                {/* <div className="name-content">{item.name}</div> */}
-//                {/* <div className="d-flex whole-content">
-//                  <div className="wishlist-content">
-//                    {item.wishlist.map((wishlist) => (
-//                         <div className='col-5 p-0 m-0'>
-//                             <span >{wishlist === 'false' ? <img src={Wishlist} alt='wishlist'/> : <img src={WishlistOpen} alt='wishlistOpen'/> }</span>
-//                         </div>
-//                     ))}
-//                  </div>
-//                  <div className="recommendedimg-content" onClick={handleIsRecommendedIcon}><img src={Recommended} alt="Recommended" /></div>
-//                  {isRecommendedOpen &&
-//                    <div className="recommendedwhole-content" onClick={handleIsRecommendedOpen}>Remove Recommendation</div>
-//                  }
-//                </div> */}
-//               {/* </div> */}
-//               {/* <div className="position-content">{item.position} - {item.company} ({item.place})</div>          */}
-//                 {/* <div className="panel-content">{item.panel.length > 0 ? 
-//                     <div>Panel on                
-//                         {item.panel.map((imgSrc,id) => {
-//                             return(                        
-//                             <>
-//                                 {imgSrc === 'Google' ? <img src={Google} key={id} alt="google" /> : null } 
-//                                 {imgSrc === 'Tata' ? <img src={Tata} key={id} alt="tata" /> : null } 
-//                             </>
-//                             )
-//                             })}
-//                     </div> : null}
-//                 </div> */}
-//                 {/* <div className="row">
-//                     {item.skills.map((skills) => (
-//                         <div className='col-5 p-0 m-0 language-wrapper'>
-//                             <span >{skills.percentage === '50' ? <img src={Orange} alt='orange'/> : <img src={Green} alt='green'/> }{skills.language}</span>
-//                         </div>
-//                     ))}
-//                 </div> */}
-//                 <div className='details-section' class="collapse" id={`collapse${item.id.toString()}`}>
-//                     <div className="p-0">
-//                         <div className="detail-wrapper">
-//                             <div className="row p-0 m-0">
-//                                 <div className="col-4 p-0 m-0">
-//                                   <div className="heading-content">Billing Rate</div>
-//                                   <div className="values-content">${item.billingRate}</div>
-//                                 </div>
-//                                 <div className="col-4 p-0 m-0">
-//                                    <div className="heading-content">Availability</div>
-//                                    <div className='values-content'>{item.availabilty} slots/day</div>
-//                                 </div>
-//                                 <div className="col-4 p-0 m-0">
-//                                     <div className="heading-content">Rating</div>
-//                                     <div className="values-content">{item.rating}</div>
-//                                 </div>
-//                                 <div className="col-12 p-0 m-0">
-//                                     <div className="preference-content">Location Preference</div>
-//                                     <div className="location-content">{item.location}</div>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//           </>  
-//           )
-//         })}        
-//       </div>
-//     )
-// }
-// export default Card;
+])(Card);

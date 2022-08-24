@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
+    <defs>
+        <filter id="ojn4068h4a" x="0" y="0" width="108" height="108" filterUnits="userSpaceOnUse">
+            <feOffset dy="20"/>
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feFlood flood-color="#262d3a" flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g data-name="Group 60800">
+        <g style="filter:url(#ojn4068h4a)">
+            <rect data-name="Rectangle 2344" width="48" height="48" rx="24" transform="translate(30 10)" style="opacity:.1;fill:#395898"/>
+        </g>
+        <path data-name="close (1)" d="m8.283 7.136 5.451-5.451A.907.907 0 1 0 12.451.4L7 5.853 1.549.4A.907.907 0 0 0 .266 1.684l5.451 5.452-5.451 5.451a.907.907 0 1 0 1.283 1.283L7 8.418l5.451 5.451a.907.907 0 1 0 1.283-1.283zm0 0" transform="rotate(45 -1.928 77.302)" style="fill:#395898"/>
+    </g>
+</svg>

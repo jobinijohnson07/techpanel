@@ -13,3 +13,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('./Assets/font/Proxima\ Nova\ Font.otf');
+}

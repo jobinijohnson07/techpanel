@@ -9,10 +9,14 @@ function Interviewers() {
   const [interviewers, setInterviewers] = useState([]);
   const [interviewersColumn, setInterviewersColumn] = useState([])
   const [cardIds, setIds] = useState([]);
+
+  console.log("interviewersColumn", interviewersColumn)
+  
   let columns = ["Recommended", "Applied", "Empanelled", "Rejected", "On Hold"];
   useEffect(() => {
     getAllInterviews();
   }, []);
+  
   function getAllInterviews() {
     fetch(`http://localhost:5000/allInterviews`)
       .then((res) => res.json())
@@ -33,6 +37,7 @@ function Interviewers() {
     columns.map(async(res, i) => {
       let cards = interviews.map((item) => {
         console.log(item.status, "item 2")
+        // if("Recommended" === "Recommended")
         if(item.status === res){
           return item.id;
         }
@@ -40,7 +45,8 @@ function Interviewers() {
       updatedCol.push({
         title: res,
         id: i,
-        cardList: cards
+        cardList: cards,
+        isSort: false,
       })
     })
     console.log(updatedCol, 'cards');
@@ -63,30 +69,11 @@ function Interviewers() {
     }))
     console.log(tempCol);
     setInterviewersColumn(tempCol);
-    // console.log(tempCol, ' tempcol');
-    // let tempCol = interviewersColumn, tempCard = {};
-    // let tempCardList = interviewers;
-    // tempCol = tempCol.find(x => x.id === destColumnId);
-    // tempCard = tempCardList.find(card => card.id === cardId);
-    // tempCard.status = tempCol.title;
-    // tempCol.cardList.push(tempCard);
-    // console.log( tempCard, tempCol, " result");
-
-    // this.setState((state) => ({
-    //   columns: state.columns.map((column) => ({
-    //     ...column,
-    //     cardIds: _.flowRight(
-    //       // 2) If this is the destination column, insert the cardId.
-    //       (ids) =>
-    //         column.id === destColumnId
-    //           ? [...ids.slice(0, index), cardId, ...ids.slice(index)]
-    //           : ids,
-    //       // 1) Remove the cardId for all columns
-    //       (ids) => ids.filter((id) => id !== cardId)
-    //     )(column.cardIds)
-    //   }))
-    // }));
-  };
+  };  
+  function updateColumnData(data) {
+    console.log(data, ' daa');
+    setInterviewersColumn(data);
+  }
   return(
     <div>
       {
@@ -95,6 +82,7 @@ function Interviewers() {
             cards={interviewers}
             columns={interviewersColumn}
             moveCard={moveCard}
+            updateColumnData={updateColumnData}
           />:null
       }         
     </div>

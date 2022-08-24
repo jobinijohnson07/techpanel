@@ -1,0 +1,13 @@
+<svg data-name="75%" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g data-name="Ellipse 8" style="stroke:#66b100;stroke-width:1.5px;fill:#fff">
+        <circle cx="15" cy="15" r="15" style="stroke:none"/>
+        <circle cx="15" cy="15" r="14.25" style="fill:none"/>
+    </g>
+    <path data-name="Path 240" d="M7257 19689.836v16.268h14.006c.739-3.68-.177-15.172-14.006-16.268z" transform="translate(-7242 -19689)" style="fill:#66b100"/>
+    <path data-name="Path 241" d="M7257 19706.1v-16.268h14.006c.739 3.682-.177 15.174-14.006 16.268z" transform="translate(-7242 -19676.102)" style="fill:#66b100"/>
+    <path data-name="Path 242" d="M7271.528 19706.1v-16.268h-14.34c-.756 3.682.181 15.174 14.34 16.268z" transform="translate(-7256.189 -19676.102)" style="fill:#66b100"/>
+    <g data-name="Ellipse 329" style="fill:none;stroke:#66b100;stroke-width:1.5px">
+        <circle cx="15" cy="15" r="15" style="stroke:none"/>
+        <circle cx="15" cy="15" r="14.25" style="fill:none"/>
+    </g>
+</svg>

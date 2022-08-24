@@ -2,7 +2,7 @@
     .data-section{
         flex-direction: column;
         width: 334px;
-        height: auto;
+        height: 100%;
         margin-left: 15px;
         padding: 11.5px 17.5px 301px 18.5px;
         border-radius: 4px;
@@ -25,6 +25,7 @@
         margin-left: auto;
     }
     .filterimg-content{
+        margin-left: -6px;
         margin-right: 15px;
         position: relative;
         cursor: pointer;

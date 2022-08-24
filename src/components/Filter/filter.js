@@ -5,6 +5,7 @@ import Graph from '../../Assets/graph.svg';
 import Interviewers from '../Interviewers/interviewers';
 import Position from '../Position/position';
 import Active from '../../Assets/green.svg';
+import Navbar from '../Navbar/navbar'
 
 function Filter() {
   const [posts, setPosts] = useState([]);
@@ -19,7 +20,7 @@ function Filter() {
   }, []);
 
   function onchangeTab(event, param){
-    console.log(param)
+    console.log(param,"first data")
     let val = param === 'interviews' ? true : false;
     setInterviewers(val);
     console.log(interviewers);
@@ -27,32 +28,35 @@ function Filter() {
 
   
   return(
-    <div className="filter-section">
-      <div className="d-flex topsection-content">
-          <div className="dropdown-content">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-              {posts.map((post) => (
-                <option value="" className="dropdown-content">{post.language}</option>
-              ))}
-            </select>
-          </div>
-          <div className="tab">
-            <div className="interviewers-content" onClick={event => onchangeTab(event, 'interviews')}>Interviewers</div>
-            <div className="positions-content" onClick={event => onchangeTab(event, 'position')}>Positions</div>
-          </div>
-          <div className="d-flex">
-            <div className="search-content"><img src={Search} alt="search" /></div>
-            <div className="graph-content"><img src={Graph} alt="Graph" /></div>
-            <div className="lastdropdown-content">
-              <select class="form-select form-select-sms" aria-label=".form-select-sms example">
-                <option><div className="color-content" /><img src={Active} alt="active" />Active</option>
-                <option value="2">In Actice</option>
+    <div>
+      <div><Navbar /></div>
+      <div className="filter-section">
+        <div className="d-flex topsection-content">
+            <div className="dropdown-content">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                {posts.map((post) => (
+                  <option value="" className="dropdown-content">{post.language}</option>
+                ))}
               </select>
             </div>
-          </div>
-          
-      </div>
-      {interviewers?<Interviewers/>:<Position/>}
+            <div className="tab">
+              <div className="interviewers-content" onClick={event => onchangeTab(event, 'interviews')}>Interviewers</div>
+              <div className="positions-content" onClick={event => onchangeTab(event, 'position')}>Positions</div>
+            </div>
+            <div className="d-flex">
+              <div className="search-content"><img src={Search} alt="search" /></div>
+              <div className="graph-content"><img src={Graph} alt="Graph" /></div>
+              <div className="lastdropdown-content">
+                <select class="form-select form-select-sms" aria-label=".form-select-sms example">
+                  <option><div className="color-content" /><img src={Active} alt="active" />Active</option>
+                  <option value="2">In Actice</option>
+                </select>
+              </div>
+            </div>
+            
+        </div>
+        {interviewers?<Interviewers/>:<Position/>}
+    </div>
     </div>
   );
 }

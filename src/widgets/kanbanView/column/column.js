@@ -10,6 +10,8 @@ function Column({data}) {
     const [isSortOpen, setSortOpen] = useState(false);
     const [isPreferencesOpen, setPreferencesOpen] = useState(false);
     // console.log(data, " data");
+    
+    let x = "vijay"
 
     const handleIsFilterIcon = () => {
       setFilterOpen(true);
@@ -40,6 +42,7 @@ function Column({data}) {
           <div className="data-section">
             <div className="d-flex">
               <div className="title-content">{data.title}</div>
+              {x}
               <div className="d-flex img-content">
                 <div className="filterimg-content" onClick={handleIsFilterIcon}><img src={Filter} alt="Filter" /></div>
                 {isFilterOpen &&
