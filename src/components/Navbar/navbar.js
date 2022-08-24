@@ -3,7 +3,7 @@ import './navbar.scss'
 import Techpanel from '../../Assets/techpanel.svg';
 import Search from '../../Assets/search.svg';
 import DownArrow from '../../Assets/downarrow.svg';
-import AddIcon from '../../Assets/addicon.svg';
+import AddIcon from '../../Assets/addicons.svg';
 import Message from '../../Assets/message.svg';
 import BellIcon from '../../Assets/bellIcon.svg';
 
