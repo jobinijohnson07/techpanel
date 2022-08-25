@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useEffect, useState } from 'react';
 import './interviewers.scss';
 import KanbanView from '../../widgets/kanbanView/KanbanView';
@@ -75,7 +76,7 @@ function Interviewers() {
     setInterviewersColumn(data);
   }
   return(
-    <div>
+    <div data-testid="interviewers">
       {
         interviewersColumn.length?
         <KanbanView

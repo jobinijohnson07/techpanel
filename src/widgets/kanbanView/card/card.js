@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState } from 'react';
 import './card.scss'
 import Google from '../../../Assets/google.png';
@@ -69,13 +70,13 @@ export function Card(props) {
       props.connectDragSource,
       props.connectDropTarget
     )(
-      <div
+      <div 
         className={cn("Card", {
           "Card--dragging": props.isDragging,
           "Card--spacer": props.isSpacer
         })}
       >
-      <div className="card-section">
+      <div className="card-section" data-testid="card-1">
         <>
           <div className="card-content">
             <button data-bs-toggle="collapse" className='expand-button' data-bs-target={`#collapse${props.data ? props.data.id.toString() : null}`}> <img src={Arrow} alt="Arrow"/> </button>

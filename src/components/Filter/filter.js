@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useEffect, useState } from 'react';
 import './filter.scss'
 import Search from '../../Assets/search.svg';
@@ -19,7 +20,7 @@ function Filter() {
       }); 
   }, []);
 
-  function onchangeTab(event, param){
+  function onchangeTab(event, param){ 
     console.log(param,"first data")
     let val = param === 'interviews' ? true : false;
     setInterviewers(val);
@@ -28,9 +29,9 @@ function Filter() {
 
   
   return(
-    <div>
+    <div data-testid="filter">
       <div><Navbar /></div>
-      <div className="filter-section">
+      <div className="filter-section"> 
         <div className="d-flex topsection-content">
             <div className="dropdown-content">
               <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -40,8 +41,8 @@ function Filter() {
               </select>
             </div>
             <div className="tab">
-              <div className="interviewers-content" onClick={event => onchangeTab(event, 'interviews')}>Interviewers</div>
-              <div className="positions-content" onClick={event => onchangeTab(event, 'position')}>Positions</div>
+              <div className={'interviews' ? 'interviewers-content' : 'positions-content' } onClick={event => onchangeTab(event, 'interviews')}>Interviewers</div>
+              <div className={'position' ? 'positions-content' : 'positions-content' } onClick={event => onchangeTab(event, 'position')}>Positions</div>
             </div>
             <div className="d-flex">
               <div className="search-content"><img src={Search} alt="search" /></div>

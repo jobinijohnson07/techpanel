@@ -9,7 +9,7 @@ import BellIcon from '../../Assets/bellIcon.svg';
 
 function Navbars() {
   return(
-    <div className="navbar-section d-flex">
+    <div className="navbar-section d-flex" data-testid="navbar">
       <img className="techpanelimg-content" src={Techpanel} alt="techpanel" />
       <div className="searchwhole-content"><img className="searchimg-content" src={Search} alt="search" />Find Jobs, people</div>
       <div className="navbar-content d-flex">

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { useState } from 'react';
 import './kanban.scss';
@@ -43,9 +44,9 @@ function KanbanView({columns, moveCard, cards, updateColumnData}) {
     }
     
     return(
-      <div style={{display: 'flex', overflowX: 'scroll'}}>
+      <div data-testid="kanban" style={{display: 'flex', overflowX: 'scroll'}}>
         <>
-          {columns.length ? columns.map((col,i)=>{
+          {columns.length !==0 ? columns.map((col,i)=>{
             return(
               <div className="column-section">
                 <div className="data-section">
@@ -53,27 +54,27 @@ function KanbanView({columns, moveCard, cards, updateColumnData}) {
                   <div className="title-content">{col.title}<span className="cardlength-content">{col.cardList.length}</span></div>
                   <div className="d-flex img-content">
                     <div className="filterimg-content" onClick={(event)=>handleIsFilterIcon(col,i)}><img src={Filter} alt="Filter" /></div>
-                    {col.isSort ?
+                    {/* {col.isSort ?
                       <div className={col.isSort ? "filterwhole-content d-block" : "filterwhole-content d-none"}>
                         <div className="filterheading-content">Sort by</div>
                         <div className="filter-content">Relevant</div>
                         <div className="filter-content">A to Z</div>
                         <div className="filter-content">Z to A</div>
                       </div> : null
-                    }
+                    } */}
                     <div className="filterimg-content" onClick={handleIsSortIcon}><img src={Sort} alt="Sort" /></div>
-                    {isSortOpen &&
+                    {/* {isSortOpen &&
                       <div className="sortwhole-content" onClick={handleIsSortOpen}>
                         <div className="filter-content">Favourites</div>
                         <div className="filter-content">Save Search</div>
                       </div>
-                    }
+                    } */}
                     <div className="preferencesimg-content" onClick={handleIsPreferencesIcon}><img src={Recommended} alt="Preferences" /></div>
-                    {isPreferencesOpen &&
+                    {/* {isPreferencesOpen &&
                     <div className="preferenceswhole-content" onClick={handleIsPreferencesOpen}>
                         <div className="filter-content">Save Preferences</div>
                     </div>
-                    }
+                    } */}
                    </div>
                    
                   </div>

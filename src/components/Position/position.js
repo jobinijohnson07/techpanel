@@ -3,7 +3,7 @@ import './position.scss'
 
 function Position() {
   return(
-    <div className="position-section">Positions will come here</div>
+    <div className="position-section" data-testid="position">Positions will come here</div>
   );
 }
 export default Position;

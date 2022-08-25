@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState } from 'react';
 import './column.scss';
 import {DraggableCard} from '../card/card';
@@ -11,8 +12,6 @@ function Column({data}) {
     const [isPreferencesOpen, setPreferencesOpen] = useState(false);
     // console.log(data, " data");
     
-    let x = "vijay"
-
     const handleIsFilterIcon = () => {
       setFilterOpen(true);
     }
@@ -38,6 +37,7 @@ function Column({data}) {
     }
 
     return(
+      <div>
         <div className="column-section">
           <div className="data-section">
             <div className="d-flex">
@@ -74,6 +74,7 @@ function Column({data}) {
             </div>
           </div>                
         </div>
+      </div>
     )
 }
 export default Column;

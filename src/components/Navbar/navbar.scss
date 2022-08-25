@@ -12,7 +12,7 @@
         width: 300px;
         height: 40px;
         padding: 10px;
-        margin: 0px 10px;
+        margin: 0px 30px;
         border-radius: 3px;
         font-family: ProximaNova;
         font-size: 16px;
@@ -34,6 +34,7 @@
     }
     .navbar-content{
         display: flex;
+        margin-left: auto;
         justify-content: space-around;
     }
     .feed-content{
@@ -45,7 +46,7 @@
         line-height: 1.2;
         letter-spacing: normal;
         text-align: left;
-        margin: 0px 15px;
+        margin: 0px 20px;
         color: #395898;
     }
     .view-content{
@@ -56,29 +57,28 @@
         font-style: normal;
         line-height: 2;
         letter-spacing: normal;
-        text-align: left;
+        text-align: center;
         color: #fff;
-        width: 274px;
-        height: 40px;
-        margin: 10px;
+        width: 200px;
+        height: 44px;
+        margin: 0px 40px 0px 20px;
         padding: 8px;
         background-color: #395898;
     }
     .dropdownimg-content{
         margin-left: 10px;
     }
-    .last-content{
-    }
     .addicon-imgcontent{
+        margin: 0px 10px;
         width: 35px;   
     }
     .message-imgcontent{
         width: 27px;
-        margin: 0px 10px;
+        margin: 0px 15px;
     }
     .bell-imgcontent{
         width: 27px;
-        margin: 0px 10px;
+        margin: 0px 15px;
     }
     .account-content{
         height: 45px;
